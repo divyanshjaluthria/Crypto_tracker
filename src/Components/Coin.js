@@ -3,8 +3,8 @@ import  './Coin.css'
 
 function Coin({ name, image, symbol, price, volume,rank,priceChange,marketCap }) {
     return (
-        <div className='coin-container d-flex justify-content-center'>
-            <div className='coin-row  d-flex flex-row justify-items-start align-items-center'>
+        <div className='coin-container d-flex justify-content-center ' >
+            <div className='coin-row row-ml  d-flex flex-row justify-items-start align-items-center'>
                 <div className='coin  d-flex align-items-center'  >
                     <img src={image} alt='crypto' className="coin-logo" />
                     
