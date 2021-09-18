@@ -1,75 +1,26 @@
 import './App.css';
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import Coin from './Components/Coin'
-import Navbar from './Components/Navbar';
-import Section from './Components/Section';
+import React, { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
+import Home from './Components/Home';
+import Allprices from './Components/AllPrices';
+import Page2 from './Components/Page2';
+import Page3 from './Components/Page3';
+
 
 
 function App() {
 
-  const [coin, setCoin] = useState([]);
+  return (<><Switch>
 
+    <Route path="/" component={Home} exact/>
+    <Route path="/see_more" component={Allprices}/>
+    <Route path="/page2" component={Page2}/>
+    <Route path="/page3" component={Page3}/>
 
-  useEffect(() => {
-    const url = "";
-    axios.get(`https://api.coingecko.com/api/v3/coins/markets`,{
-      params:{
-        vs_currency: "inr",
-        page: "1",
-      }
-    },).then(res => {
-      setCoin(res.data);
-      console.log(res.data);
+  </Switch>
 
-    }).catch(error => console.log(error))
-  }, []);
+  </>
 
-
-
-
-  const [search, setSearch] = useState('');
-  const handleOnChange = e => {
-    setSearch(e.target.value);
-  }
-
-
-  const filteredCoins = coin.filter(coin =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  )
-
-  const ranked = coin.filter(coin =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  )
-
-  return (<>
-  <Section/>
-       <div className="coin-app ">
-      {/* <Navbar handleOnChange={handleOnChange} /> */}
-      {filteredCoins.slice(0,10).map(
-        coin=>{
-          return(
-            <Coin
-             key={coin.id} 
-            name={coin.name} 
-            image={coin.image }
-            symbol={coin.symbol}
-            volume={coin.total_volume}
-            price={coin.current_price}
-            rank={coin.market_cap_rank}
-            priceChange={coin.price_change_percentage_24h}
-            marketCap={coin.market_cap}/>
-            )
-        }
-      )}  
-
-      
-
-    
-      
-      
-      </div>
-    </>
   );
 }
 

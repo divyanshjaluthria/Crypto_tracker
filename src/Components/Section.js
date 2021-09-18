@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Coin from './Coin';
+import FadeIn from 'react-fade-in';
 
 
 function Section(props) {
@@ -8,7 +9,7 @@ function Section(props) {
         <>
             <Container className="landing d-flex ">
                 <div className="btn btn-dark mode">Dark🌙</div>
-                <Content className="container content d-flex justify-content-center align-items-center flex-column">
+                <Content className=" content d-flex justify-content-center align-items-center flex-column">
                     <h1 className="pe-none">Crypto Tracker</h1>
                     <p>Crypto Tracker Which Will Make your lIfe Easier</p>
                     <img src="./btc.png.png" className="image-fluid" alt="" />
