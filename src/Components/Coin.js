@@ -1,7 +1,5 @@
 import React from 'react'
 import './Coin.css'
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
-import Details from './Details';
 
 function Coin({ name, image, symbol, price, volume, rank, priceChange, marketCap }) {
     return (

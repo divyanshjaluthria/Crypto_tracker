@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Coin from './Coin';
 import Footer from './Footer';
 import Navbar from './Navbar';
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Details from './Details';
 
 
@@ -24,10 +24,7 @@ function Page3() {
         }).catch(error => console.log(error))
     }, []);
 
-    const [search, setSearch] = useState('');
-    const handleOnChange = e => {
-        setSearch(e.target.value);
-    }
+    const [search] = useState('');
 
     const filteredCoins = coin.filter(coin =>
         coin.name.toLowerCase().includes(search.toLowerCase())

@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import Coin from './Coin';
-import FadeIn from 'react-fade-in';
 
 
 function Section(props) {
@@ -74,12 +72,5 @@ const Top = styled.div`
  margin-top: 10vh;
  margin-bottom: 30px;
 
-
-`
-
-const Content2 = styled.div`
-
-    margin-top: 5vh;
-    margin-left: 5vw;
 
 `
