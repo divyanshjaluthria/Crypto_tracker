@@ -24,14 +24,19 @@ function Page2() {
         }).catch(error => console.log(error))
     }, []);
 
-    const [search] = useState('');
+    const [search, setSearch] = useState('');
+const handleOnChange = e => {
+    setSearch(e.target.value)
+}
 
     const filteredCoins = coin.filter(coin =>
         coin.name.toLowerCase().includes(search.toLowerCase())
     )
+
+
     return (
         <>
-        <Navbar/>
+        <Navbar handleOnChange={handleOnChange} />
         <Details></Details>
             {filteredCoins.slice(0, 100).map(
                 coin => {
@@ -50,9 +55,9 @@ function Page2() {
                 }
             )}
                  <div className="container d-flex justify-content-center align-itmes-center">
- <Link to="/see_more"> <button type="button" class=" btn btn-primary more1 ">Page 1</button></Link>
- <Link to="/"> <button type="button" class=" btn btn-primary more1 ">Home</button></Link>
- <Link to="/page3"> <button type="button" class=" btn btn-primary more1 ">Page 3</button></Link></div>
+ <Link to="/see_more"> <button type="button" className=" btn btn-primary more1 ">Page 1</button></Link>
+ <Link to="/"> <button type="button" className=" btn btn-primary more1 ">Home</button></Link>
+ <Link to="/page3"> <button type="button" className=" btn btn-primary more1 ">Page 3</button></Link></div>
  
             <Footer/>
         </>

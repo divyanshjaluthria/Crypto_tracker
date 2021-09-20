@@ -4,6 +4,7 @@ import './Coin.css'
 function Coin({ name, image, symbol, price, volume, rank, priceChange, marketCap }) {
     return (
         <>
+        <div className="contain">
         <div className='coin-container d-flex justify-content-center ' >
                 <div className='coin-row row-ml  d-flex flex-row justify-items-start align-items-center'>
                     <div className='coin  d-flex align-items-center'  >
@@ -18,14 +19,15 @@ function Coin({ name, image, symbol, price, volume, rank, priceChange, marketCap
                         <p className="coin-price ">Price <br />Rs {price.toLocaleString()}</p>
                         <p className='coin-volume '>Volume <br />Rs {volume.toLocaleString()}</p>
                         {priceChange < 0 ? (
-                            <p className="coin-percent text-danger">Loss {priceChange.toFixed(4)}% </p>
+                            <p className="coin-percent text-danger">Loss {priceChange.toFixed(2)}% </p>
                         )
-                            : (<p className="coin-percent text-success">Profit {priceChange.toFixed(4)}%</p>)
+                            : (<p className="coin-percent text-success">Profit {priceChange.toFixed(2)}%</p>)
                         }
                         <p className="coin-market-cap">Market Cap. {marketCap.toLocaleString()}</p>
                     </div>
                 </div>
 
+            </div>
             </div>
             </>
 

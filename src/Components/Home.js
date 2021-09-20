@@ -5,6 +5,7 @@ import Coin from './Coin';
 import axios from 'axios';
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
+import styled from 'styled-components'
 
 
 
@@ -49,11 +50,21 @@ function Home() {
                     )
                 }
             )}
+            <Button>
             <div className="container d-flex justify-content-center align-itmes-center">
-            <Link to="/see_more"> <button type="button" class=" btn btn-primary more1 ">See More</button></Link></div>
+            <Link to="/page1"> <button type="button" className=" btn more1 ">See More</button></Link></div>
+            </Button>
             <Footer />
         </div>
     )
 }
 
 export default Home
+
+const Button = styled.div`
+
+    .more1{
+        background: #064273;
+        color: #97f2f3;
+    }
+`
